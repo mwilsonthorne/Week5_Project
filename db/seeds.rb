@@ -8,6 +8,11 @@ cargo3 = Cargo.new({'description' => 'Ammunition'})
 cargo4 = Cargo.new({'description' => 'Spaceship Docking Tax'})
 cargo5 = Cargo.new({'description' => 'Gardulla'})
 
+cargo1.save()
+cargo2.save()
+cargo3.save()
+cargo4.save()
+cargo5.save()
 
 
 
