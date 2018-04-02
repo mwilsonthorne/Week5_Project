@@ -61,6 +61,6 @@ def total_value()
   first_hash = arr_hashes.first
   total = first_hash['total_spending']
   return total
-
 end
+
 end
