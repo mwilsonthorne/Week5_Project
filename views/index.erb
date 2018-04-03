@@ -1,8 +1,12 @@
 <p>Transactions List</p>
+<hr/>
 
 <% @transactions.each do |transaction| %>
     <p>Vendor: <%= transaction.vendor_name %></p>
     <p>Satellite: <%= transaction.planet_name %></p>
     <p>Cargo Type: <%= transaction.cargo_id %></p>
     <p>Cost(Z): <%= transaction.value %></p>
+    <hr/>
 <% end %>
+
+    <p>Overall Total(Z): <%= @total %>

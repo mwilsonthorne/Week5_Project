@@ -38,7 +38,7 @@ end
 
 
 def self.all()
-  sql "SELECT * FROM cargos"
+  sql = "SELECT * FROM cargos"
   arr_hashes = SqlRunner.run(sql) # you are reading and not creating values so no values required
   # arr_hashes is [ {"description" => "fuel", "id" => "23"} ]
   arr_obj = arr_hashes.map{|a_hash| Cargo.new(a_hash)}

@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner.rb')
+require('pry')
 
 class Transaction
 
@@ -52,14 +53,13 @@ end
 
 
 
-def total_value()
+def self.total_value() #self calling for all transactions not one specific. Can now use in controller as Transaction.total_value
   sql = "SELECT SUM(value) FROM transactions"
-  # arr_hashes  is [ { "total_spending" => "234" } ]
-  arr_hashes = SqlRunner.run(sql, values)
-  p arr_hashes.first
-  # first_hash  is { "total_spending" => "234" }
+  arr_hashes = SqlRunner.run(sql)
+  # # arr_hashes  is [ { "sum" => "1775" } ]
   first_hash = arr_hashes.first
-  total = first_hash['total_spending']
+  # # first_hash  is { "sum" => "1775" }
+  total = first_hash['sum'] # use SUM in sql function
   return total
 end
 
