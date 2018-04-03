@@ -4,9 +4,20 @@
 <% @transactions.each do |transaction| %>
     <p>Vendor: <%= transaction.vendor_name %></p>
     <p>Satellite: <%= transaction.planet_name %></p>
-    <p>Cargo Type: <%= transaction.cargo_id %></p>
+    <p>Cargo Type: <%= transaction.get_cargo().description %></p>
     <p>Cost(Z): <%= transaction.value %></p>
     <hr/>
 <% end %>
 
-    <p>Overall Total(Z): <%= @total %>
+
+    <h4>Total Spent(Z) By Cargo Type</h4>
+
+    <p>Ammunition:</p>
+    <p>Gardulla:</p>
+    <p>Space Food:</p>
+    <p>Spaceship Docking Tax:</p>
+    <p>Rocket Fuel:</p>
+
+
+
+    <h4>Overall Total Spent(Z): <%= @total %>

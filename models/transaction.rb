@@ -46,10 +46,15 @@ def self.all()
   return arr_obj
 end
 
+# get Cargo object for this transaction
+def get_cargo()
+  sql = "SELECT * FROM cargos WHERE id = $1" #link between tables: id = $1 and values = [@cargo_id]
+  values = [@cargo_id]
+  arr_hashes = SqlRunner.run(sql, values)
+  cargo_obj = Cargo.new(arr_hashes.first) #remember Cargo.new(arr_hashes.first) = initialize(options) hash already passed through
+  return cargo_obj # only one value passed through array so only first method required ($1). If multiple ($1,$2,$3) then use map.
+end
 
-# SELECT SUM(aggregate_expression)
-# FROM tables
-# [WHERE conditions];
 
 
 
