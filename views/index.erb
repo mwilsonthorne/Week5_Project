@@ -2,7 +2,7 @@
 <hr/>
 
 <% @transactions.each do |transaction| %>
-    <p>Vendor: <%= transaction.vendor_name %></p>
+    <p><a href="/transactions/<%= transaction.id %>">Vendor: <%= transaction.vendor_name %></p>
     <p>Satellite: <%= transaction.planet_name %></p>
     <p>Cargo Type: <%= transaction.get_cargo().description %></p>
     <p>Cost(Z): <%= transaction.value %></p>

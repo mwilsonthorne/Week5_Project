@@ -1,0 +1,7 @@
+<p>Vendor: <%= @transaction.vendor_name %></p>
+<p>Satellite: <%= @transaction.planet_name %></p>
+<p>Cargo Type: <%= @transaction.get_cargo().description %></p>
+<p>Cost(Z): <%= @transaction.value %></p>
+
+
+<form action="/transactions/<%= @transaction.id %>/delete" method="POST"><input type="submit" value="Delete"></form>

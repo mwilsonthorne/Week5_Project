@@ -55,9 +55,6 @@ def get_cargo()
   return cargo_obj # only one value passed through array so only first method required ($1). If multiple ($1,$2,$3) then use map.
 end
 
-
-
-
 def self.total_value() #self calling for all transactions not one specific. Can now use in controller as Transaction.total_value
   sql = "SELECT SUM(value) FROM transactions"
   arr_hashes = SqlRunner.run(sql)
@@ -67,5 +64,38 @@ def self.total_value() #self calling for all transactions not one specific. Can 
   total = first_hash['sum'] # use SUM in sql function
   return total
 end
+
+def self.find( id )
+  sql = "SELECT * FROM transactions where id = $1"
+  values = [id]
+  arr_hashes = SqlRunner.run(sql, values)
+  arr_obj = Transaction.new(arr_hashes.first)
+  return arr_obj
+end
+
+def delete()
+  sql = "DELETE FROM transactions WHERE id = $1"
+  values = [@id]
+  SqlRunner.run(sql, values)
+end
+
+# def update()
+#  sql = "INSERT * INTO transactions
+#  (
+#    vendor_name,
+#    planet_name,
+#    value,
+#    cargo_id
+#  )
+#    VALUES
+#  (
+#    $1,$2,$3,$4
+#  )
+#    RETURNING id
+#  "
+#
+#
+#
+# end
 
 end
