@@ -1,0 +1,33 @@
+/*  Site-wide CSS --------- */
+
+body {
+ background-color: snow;
+ margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+
+/* ----------- Menu --------- */
+.menu {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  border-bottom: 3px solid white;
+}
+
+.menu li {
+  padding: 30px;
+}
+
+.menu li a {
+  color: white;
+}
+
+/* ------ ----- */
