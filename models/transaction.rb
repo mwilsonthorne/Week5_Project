@@ -47,7 +47,7 @@ def self.all()
 end
 
 # get Cargo object for this transaction
-def get_cargo()
+def get_cargo() #instance methods calling on a specific object eg transaction
   sql = "SELECT * FROM cargos WHERE id = $1" #link between tables: id = $1 and values = [@cargo_id]
   values = [@cargo_id]
   arr_hashes = SqlRunner.run(sql, values)
@@ -62,15 +62,15 @@ def self.total_value() #self calling for all transactions not one specific. Can 
   first_hash = arr_hashes.first
   # # first_hash  is { "sum" => "1775" }
   total = first_hash['sum'] # use SUM in sql function
-  return total
+  return total.to_i
 end
 
-def self.find( id )
+def self.find( id ) #class method, i.e. Transaction.find(23) return Transaction object using id
   sql = "SELECT * FROM transactions where id = $1"
   values = [id]
   arr_hashes = SqlRunner.run(sql, values)
-  arr_obj = Transaction.new(arr_hashes.first)
-  return arr_obj
+  transaction_object = Transaction.new(arr_hashes.first)
+  return transaction_object
 end
 
 def delete()
@@ -94,6 +94,15 @@ def update()
  "
  values = [@vendor_name, @planet_name, @value, @cargo_id, @id]
  SqlRunner.run(sql, values)
+end
+
+def self.budget_warning
+ budget_limit = 2000
+ if budget_limit < self.total_value
+   return true
+ else
+   return false
+ end
 end
 
 end

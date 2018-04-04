@@ -46,5 +46,14 @@ def self.all()
   return arr_obj
 end
 
+def cargo_total()
+  sql = "SELECT SUM(value) FROM transactions WHERE cargo_id = $1"
+  values = [@id]
+  arr_hashes = SqlRunner.run(sql, values)
+  
+  first_hash = arr_hashes.first
+
+  total = first_hash['sum']
+end
 
 end

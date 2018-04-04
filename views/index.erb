@@ -6,18 +6,25 @@
     <p>Satellite: <%= transaction.planet_name %></p>
     <p>Cargo Type: <%= transaction.get_cargo().description %></p>
     <p>Cost(Z): <%= transaction.value %></p>
-<hr/>
+    <hr/>
 <% end %>
 
+<h4>Total Spent(Z) By Cargo Type</h4>
 
-    <h4>Total Spent(Z) By Cargo Type</h4>
+<p>Cargo Type: </p>
 
-    <p>Ammunition:</p>
-    <p>Gardulla:</p>
-    <p>Space Food:</p>
-    <p>Spaceship Docking Tax:</p>
-    <p>Rocket Fuel:</p>
 
+<ul>
+
+    <% @cargos.each do |cargo| %>
+          <li><%= cargo.description %> - <%= cargo.cargo_total() %></li>
+    <% end %>
+
+</ul>
 
 <hr/>
-    <h4>Overall Total Spent(Z): <%= @total %>
+<h4>Overall Total Spent(Z): <%= @total %>
+
+   <% if Transaction.budget_warning %>
+    <p>Warning! Budget Exceeded!</p>
+   <% end %>
