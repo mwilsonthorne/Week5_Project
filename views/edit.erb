@@ -1,0 +1,26 @@
+<p>Edit Transaction</p>
+
+<form method="POST" action="/transactions/<%= @transaction.id %>">
+
+    <label for="vendor_name">Vendor:</label>
+    <input type="text" name="vendor_name" id="vendor_name" value="<%= @transaction.vendor_name %>"/>
+
+    <label for="planet_name">Satellite:</label>
+    <input type="text" name="planet_name" id="planet_name" value="<%= @transaction.planet_name %>"/>
+
+    <label for="cargo_select">Cargo Type:</label>
+    <select name="cargo_id" id="cargo_select" selected="<%= @transaction.cargo_id  %>">
+        <% @cargos.each do |cargo| %>
+          <% if cargo.id == @transaction.cargo_id %>
+            <option value=<%= cargo.id %> selected><%= cargo.description %></option>
+          <% else %>
+            <option value=<%= cargo.id %>><%= cargo.description %></option>
+          <% end %>
+        <% end %>
+    </select>
+
+    <label for="value">Cost(Z):</label>
+    <input type="number" name="value" id="value" value="<%= @transaction.value %>"/>
+
+    <input type="submit" value="Edit Transaction"/>
+</form>

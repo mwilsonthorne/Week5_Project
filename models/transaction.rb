@@ -79,23 +79,21 @@ def delete()
   SqlRunner.run(sql, values)
 end
 
-# def update()
-#  sql = "INSERT * INTO transactions
-#  (
-#    vendor_name,
-#    planet_name,
-#    value,
-#    cargo_id
-#  )
-#    VALUES
-#  (
-#    $1,$2,$3,$4
-#  )
-#    RETURNING id
-#  "
-#
-#
-#
-# end
+def update()
+ sql = "UPDATE transactions SET
+ (
+   vendor_name,
+   planet_name,
+   value,
+   cargo_id
+ ) =
+ (
+   $1,$2,$3,$4
+ )
+   WHERE id = $5
+ "
+ values = [@vendor_name, @planet_name, @value, @cargo_id, @id]
+ SqlRunner.run(sql, values)
+end
 
 end

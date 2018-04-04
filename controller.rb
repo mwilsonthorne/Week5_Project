@@ -16,7 +16,7 @@ end
 
 post '/transactions' do
   Transaction.new(params).save
-  redirect '/transactions'
+  erb(:create)
 end
 
 get '/transactions/:id' do
@@ -27,5 +27,17 @@ end
 post '/transactions/:id/delete' do
   transaction = Transaction.find(params['id'])
   transaction.delete
-  redirect '/transactions'
+  erb(:delete)
+end
+
+get '/transactions/:id/edit' do
+  @cargos = Cargo.all
+  @transaction = Transaction.find(params['id'])
+  erb(:edit)
+end
+
+post '/transactions/:id' do
+  transaction = Transaction.new(params)
+  transaction.update
+  redirect "/transactions/#{params['id']}"
 end
