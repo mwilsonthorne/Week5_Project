@@ -30,6 +30,19 @@ li {
   list-style-type: none;
 }
 
+select {
+  font-family: SF Digital Readout;
+  font-size: 16px;
+
+}
+
+input {
+  font-family: SF Digital Readout;
+  font-size: 20px;
+
+
+}
+
 /* ----------- Menu --------- */
 .menu {
   font-size: 50px;
