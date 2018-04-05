@@ -10,11 +10,12 @@
 </div>
   <% end %>
 
+<div class="cargo-type">
   <h4>Total Spent(Z) By Cargo Type</h4>
 
   <p>Cargo Type: </p>
 
-
+<div class="cargo-list"
   <ul>
 
     <% @cargos.each do |cargo| %>
@@ -22,11 +23,13 @@
     <% end %>
 
   </ul>
-
-  <hr/>
+</div>
+</div>
+<div class="overall-spent"
   <h4>Overall Total Spent(Z): <%= @total %>
 
     <% if Transaction.budget_warning %>
-    <p>Warning! Budget Exceeded!</p>
+    <p>Warning! Exceeded Budget Limit - 2000(Z)!</p>
     <% end %>
+</div>
 </div>
