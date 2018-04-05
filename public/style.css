@@ -1,12 +1,27 @@
 /*  Site-wide CSS --------- */
 
 body {
- background-color: snow;
+ /* background-image: url("france_index.jpeg"); */
+ background-color: black;
  margin: 0;
+ font-family: SF Digital Readout;
+ color: #05f4de;
+}
+
+h1 {
+  color: #05f4de;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
 }
 
 a {
   text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: red;
 }
 
 li {
@@ -16,10 +31,12 @@ li {
 
 /* ----------- Menu --------- */
 .menu {
+  font-size: 28px;
+  color: #05f4de;
   display: flex;
   justify-content: center;
   background-color: black;
-  border-bottom: 3px solid white;
+  border-bottom: 3px dotted white;
 }
 
 .menu li {
@@ -27,7 +44,31 @@ li {
 }
 
 .menu li a {
-  color: white;
+  color: #05f4de;
 }
 
-/* ------ ----- */
+/* ------ PAGES ----- */
+
+.page {
+  /* background-image: url("wales_index.jpeg"); */
+  color: #05f4de;
+  font-size: 28px;
+  border: 2px solid red;
+}
+
+/*------Transaction box ---- */
+
+.transaction-page {
+  color: #05f4de;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  }
+
+.transaction-box {
+  border: 2px solid green;
+  max-width: 400px;
+  padding-left: 30px;
+
+}

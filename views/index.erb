@@ -1,30 +1,32 @@
-<p>Transactions List</p>
-<hr/>
+<div class="transaction-page">
+<h2>Transactions List</h2>
 
 <% @transactions.each do |transaction| %>
-    <p><a href="/transactions/<%= transaction.id %>">Vendor: <%= transaction.vendor_name %></a></p>
-    <p>Satellite: <%= transaction.planet_name %></p>
-    <p>Cargo Type: <%= transaction.get_cargo().description %></p>
-    <p>Cost(Z): <%= transaction.value %></p>
-    <hr/>
-<% end %>
+<div class="transaction-box">
+  <p><a href="/transactions/<%= transaction.id %>">Vendor: <%= transaction.vendor_name %></a></p>
+  <p>Satellite: <%= transaction.planet_name %></p>
+  <p>Cargo Type: <%= transaction.get_cargo().description %></p>
+  <p>Cost(Z): <%= transaction.value %></p>
+</div>
+  <% end %>
 
-<h4>Total Spent(Z) By Cargo Type</h4>
+  <h4>Total Spent(Z) By Cargo Type</h4>
 
-<p>Cargo Type: </p>
+  <p>Cargo Type: </p>
 
 
-<ul>
+  <ul>
 
     <% @cargos.each do |cargo| %>
-          <li><%= cargo.description %> - <%= cargo.cargo_total() %></li>
+    <li><%= cargo.description %> - <%= cargo.cargo_total() %></li>
     <% end %>
 
-</ul>
+  </ul>
 
-<hr/>
-<h4>Overall Total Spent(Z): <%= @total %>
+  <hr/>
+  <h4>Overall Total Spent(Z): <%= @total %>
 
-   <% if Transaction.budget_warning %>
+    <% if Transaction.budget_warning %>
     <p>Warning! Budget Exceeded!</p>
-   <% end %>
+    <% end %>
+</div>
