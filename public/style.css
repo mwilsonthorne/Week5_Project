@@ -1,8 +1,10 @@
 /*  Site-wide CSS --------- */
 
 body {
- /* background-image: url("france_index.jpeg"); */
  background-color: black;
+ background-image: url('/option-5.jpg');
+ background-size: 100%;
+ background-attachment: fixed;
  margin: 0;
  font-family: SF Digital Readout;
  color: #05f4de;
@@ -28,7 +30,6 @@ li {
   list-style-type: none;
 }
 
-
 /* ----------- Menu --------- */
 .menu {
   font-size: 50px;
@@ -39,12 +40,17 @@ li {
   border-bottom: 5px dashed white;
 }
 
+
 .menu li {
   padding: 30px;
 }
 
 .menu li a {
   color: #05f4de;
+}
+
+.menu li a:hover {
+  color: red;
 }
 
 /* ------ PAGES ----- */
@@ -118,3 +124,9 @@ button {
    font-size: 1.25em;
    width: 100%;
 }
+
+button:hover {
+  color: red;
+}
+
+/*--------edit-------------*/
