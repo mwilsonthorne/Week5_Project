@@ -60,6 +60,8 @@ li {
   color: #05f4de;
   font-size: 40px;
   border: 2px solid red;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /*------Transaction box ---- */
@@ -114,6 +116,7 @@ li {
 
 button {
   background-color: #2B7A78;
+  opacity: 0.75;
    border: 2px solid #3AAFA9;
    color: white;
    padding: 16px 32px;
