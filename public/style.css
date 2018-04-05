@@ -36,7 +36,7 @@ li {
   display: flex;
   justify-content: center;
   background-color: black;
-  border-bottom: 3px dotted white;
+  border-bottom: 5px dashed white;
 }
 
 .menu li {
@@ -106,13 +106,6 @@ li {
 
 /*------buttons------------*/
 
-/* .button{
-  padding: 10px;
-  background-color: blue;
-  border: none;
-  text-decoration: none;
-} */
-
 button {
   background-color: #2B7A78;
    border: 2px solid #3AAFA9;
@@ -121,6 +114,7 @@ button {
    text-decoration: none;
    margin-top: 20px;
    cursor: pointer;
+   font-family: SF Digital Readout;
    font-size: 1.25em;
    width: 100%;
 }

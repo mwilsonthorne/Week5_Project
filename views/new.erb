@@ -2,22 +2,20 @@
 
 <form method="POST" action="/transactions">
 
-    <label for="vendor_name">Vendor:</label>
-    <input type="text" name="vendor_name" id="vendor_name"/>
+  <label for="vendor_name">Vendor:</label>
+  <input type="text" name="vendor_name" id="vendor_name"/>
 
-    <label for="planet_name">Satellite:</label>
-    <input type="text" name="planet_name" id="planet_name"/>
+  <label for="planet_name">Satellite:</label>
+  <input type="text" name="planet_name" id="planet_name"/>
 
-    <label for="cargo_select">Cargo Type:</label>
-    <select name="cargo_id" id="cargo_select"/>
-        <% @cargos.each do |cargo| %>
-            <option value=<%= cargo.id %>><%= cargo.description %></option>
-        <% end %>
-    </select>
+  <label for="cargo_select">Cargo Type:</label>
+  <select name="cargo_id" id="cargo_select"/>
+  <% @cargos.each do |cargo| %>
+  <option value=<%= cargo.id %>><%= cargo.description %></option>
+  <% end %>
+</select>
 
-    <label for="value">Cost(Z):</label>
-    <input type="number" name="value" id="value"/>
-  <button class="button">
-    <input type="submit" value="Add Transaction"/>
-  </button>
+<label for="value">Cost(Z):</label>
+<input type="number" name="value" id="value"/>
+<button type="submit">Add Transaction</button>
 </form>

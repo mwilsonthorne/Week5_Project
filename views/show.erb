@@ -4,6 +4,5 @@
 <p>Cost(Z): <%= @transaction.value %></p>
 
 <a href="/transactions/<%= @transaction.id %>/edit">Edit</a>
-<button class="button">
-<form action="/transactions/<%= @transaction.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
-</button>
+
+<form action="/transactions/<%= @transaction.id %>/delete" method="POST"><button type="submit">Delete Transaction</button></form>
