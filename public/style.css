@@ -1,4 +1,4 @@
-/*  Site-wide CSS --------- */
+ /* Site-wide CSS --------- */
 
 body {
  background-color: black;
@@ -56,17 +56,17 @@ li {
 /* ------ PAGES ----- */
 
 .page {
-  /* background-image: url("wales_index.jpeg"); */
+
   color: #05f4de;
   font-size: 40px;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   padding-left: 20px;
   padding-right: 20px;
 }
 
 /*------Transaction box ---- */
 
-.transaction-page {
+ .transaction-page {
   color: #05f4de;
   font-size: 24px;
   display: flex;
@@ -87,28 +87,28 @@ li {
 /*-----------Cost by Cargo Box---*/
 
 .cargo-type {
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   text-align: left;
   font-size: 40px;
   padding: 30px;
 }
 
 .cargo-type li {
-  border: 2px solid white;
+  border: 1px solid red;
   text-align: left;
   font-size: 40px;
   padding: 30px;
 }
 
 .overall-spent {
-  border: 2px solid orange;
+  /* border: 2px solid orange; */
   padding: 30px;
   text-align: left;
   font-size: 40px;
 }
 
 .cargo-list {
-  border: 2px solid purple;
+  /* border: 2px solid purple; */
   padding: 30px
 }
 
@@ -131,5 +131,3 @@ button {
 button:hover {
   color: red;
 }
-
-/*--------edit-------------*/
