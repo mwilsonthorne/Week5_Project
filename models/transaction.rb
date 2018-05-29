@@ -51,11 +51,14 @@ def get_cargo() #instance methods calling on a specific object eg transaction
   sql = "SELECT * FROM cargos WHERE id = $1" #link between tables: id = $1 and values = [@cargo_id]
   values = [@cargo_id]
   arr_hashes = SqlRunner.run(sql, values)
-  cargo_obj = Cargo.new(arr_hashes.first) #remember Cargo.new(arr_hashes.first) = initialize(options) hash already passed through
-  return cargo_obj # only one value passed through array so only first method required ($1). If multiple ($1,$2,$3) then use map.
+  cargo_obj = Cargo.new(arr_hashes.first) #remember Cargo.new(arr_hashes.first) = initialize(options)
+  # hash already passed through
+  return cargo_obj # only one value passed through array so only first method required ($1).
+  # If multiple ($1,$2,$3) then use map.
 end
 
-def self.total_value() #self calling for all transactions not one specific. Can now use in controller as Transaction.total_value
+def self.total_value() #self calling for all transactions not one specific. Can now use in
+  # controller as Transaction.total_value
   sql = "SELECT SUM(value) FROM transactions"
   arr_hashes = SqlRunner.run(sql)
   # # arr_hashes  is [ { "sum" => "1775" } ]
